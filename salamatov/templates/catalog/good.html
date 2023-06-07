@@ -1,0 +1,20 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+<div class="container my-5">
+  <div class="position-relative p-5 text-center text-muted bg-body border border-dashed rounded-5">
+    <h1 class="text-body-emphasis mb-4">{{good.name}}</h1>
+    <img src="{{ good.photo.url }}" width="90%" height="600px">
+    <p class="col-lg-6 mx-auto mb-4 mt-5 fs-4">
+       {{good.description}}
+    </p>
+    <form action="{% url 'cart-add' %}" method="post">
+      {% csrf_token %}
+        <button type="submit" class="btn btn-lg btn-success">Добавить в корзину</button>
+        <input type="hidden" name="good_id" value="{{ good.id }}">
+    </form>
+  </div>
+</div>
+
+{% endblock %}

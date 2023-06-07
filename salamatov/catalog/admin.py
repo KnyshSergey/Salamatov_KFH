@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import Category, Wood, Certificate
+from .models import Category, Good, Certificate
 
-@admin.register(Wood)
+@admin.register(Good)
 class WoodAdmin(admin.ModelAdmin):
     list_display = ("name", "description", "date_of_manufacture", "price", "amount", "category", "photo")
 
