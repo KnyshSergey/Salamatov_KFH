@@ -1,0 +1,27 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+    <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Новости</h1>
+        <p class="lead text-body-secondary">Здесь вы можете посмотреть самые последние новости</p>
+      </div>
+    </div>
+  </section>
+    {% for new in news %}
+    <div class="container py-4">
+
+        <div class="p-5 mb-4 bg-body-tertiary rounded-3">
+              <div class="container-fluid py-5">
+                <h1 class="display-7 fw-bold">{{ new.title }} <h6 class="display-7">{{ new.created }}</h6></h1>
+                <img class="mx-auto" src="{{ new.photo.url }}" width="50%" height="50%">
+                <p class="col-md-8 fs-4 ml-5">{{ new.description }}</p>
+
+              </div>
+        </div>
+    </div>
+    {% endfor %}
+
+{% endblock%}

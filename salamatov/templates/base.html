@@ -106,7 +106,7 @@
 <header data-bs-theme="dark">
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="{% url 'base' %}">КФХ "Саламатов"</a>
+      <a class="navbar-brand" href="{% url 'base' %}">КФХ "Саламатов С.А."</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -133,7 +133,7 @@
           </li>
           {% endif %}
           <li class="nav-item">
-            <a class="nav-link active" href="#">Новости</a>
+            <a class="nav-link active" href="{% url 'news' %}">Новости</a>
           </li>
         </ul>
         <form class="d-flex me-lg-3" method="post" action="{% url 'catalog-search' %}">
@@ -143,11 +143,11 @@
         </form>
 
         {% if user.is_authenticated %}
-        <span class="px-4 text-white">Привет, {{ user.username }}</span><a href="{% url 'logout' %}" class="btn btn-danger">Выйти</a>
+<!--        <span class="px-4 text-white">Привет, {{ user.username }}</span><a href="{% url 'logout' %}" class="btn btn-danger">Выйти</a>-->
         {% else %}
         <div class="nav-item" bis_skin_checked="1">
-          <a href="{% url 'login' %}" class="btn btn-outline-light me-2">Войти</a>
-          <a href="{% url 'accounts-signup' %}" class="btn btn-success">Регистрация</a>
+<!--          <a href="{% url 'login' %}" class="btn btn-outline-light me-2">Войти</a>-->
+<!--          <a href="{% url 'accounts-signup' %}" class="btn btn-success">Регистрация</a>-->
         </div>
         {% endif %}
       </div>
@@ -165,14 +165,14 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="{% static 'carousele-photo/1.jpg' %}" class="d-block w-100" alt="...">
+        <img src="{% static 'carousele-photo/1.png' %}" class="d-block w-100" alt="...">
         <div class="container">
           <div class="carousel-caption text-start">
             {% if user.is_authenticated %}
-            <h1>Следите за нами.</h1>
+            <h1>Следите за нами</h1>
             <p>Зарегистрируйтесь сейчас чтобы быть в курсе всех новостей</p>
             {% else %}
-            <h1>Следите за нами.</h1>
+            <h1>Следите за нами</h1>
             <p>Зарегистрируйтесь сейчас чтобы быть в курсе всех новостей</p>
             <p><a class="btn btn-lg btn-success" href="{% url 'accounts-signup' %}">Регистрация</a></p>
             {% endif %}
@@ -184,8 +184,8 @@
         <div class="container">
           <div class="carousel-caption">
             <h1>Новости</h1>
-            <p>В новостях вы можете узнать много нового, что происходит у нас на предприятии.</p>
-            <p><a class="btn btn-lg btn-success" href="#">Новости</a></p>
+            <p>В новостях вы можете узнать много нового, что происходит у нас на предприятии</p>
+            <p><a class="btn btn-lg btn-success" href="{% url 'news' %}">Новости</a></p>
           </div>
         </div>
       </div>
@@ -193,7 +193,7 @@
         <img src="{% static 'carousele-photo/3.jpg' %}" class="d-block w-100" alt="...">
         <div class="container">
           <div class="carousel-caption text-end">
-            <h1>Все многообразие нашего преприятия.</h1>
+            <h1>Все многообразие нашего преприятия</h1>
             <p>Окунитесь в атмосферу КФХ "Саламатов С.А."</p>
             <p><a class="btn btn-lg btn-success" href="#">Галерея</a></p>
           </div>
@@ -267,8 +267,8 @@
 
     <div class="row featurette">
       <div class="col-md-7">
-        <h2 class="featurette-heading fw-normal lh-1">Ответственное лесопользование.<span class="text-body-secondary"></span></h2>
-        <p class="lead">КФХ "Салматов С.А." — ответственный лесопользователь. Компания поддерживает требования международных стандартов в области устойчивого развития</p>
+        <h2 class="featurette-heading fw-normal lh-1">Ответственное лесопользование<span class="text-body-secondary"></span></h2>
+        <p class="lead">КФХ "Саламатов С.А." — ответственный лесопользователь. Компания поддерживает требования международных стандартов в области устойчивого развития</p>
       </div>
       <div class="col-md-5">
         <img src="{% static 'promo_photo/promo_3.jpg' %}" class="d-block w-100 rounded-circle" alt="..." width="500" height="500">

@@ -1,7 +1,7 @@
 from django.shortcuts import redirect
 from .models import Cart
 from catalog.models import Good
-from django.views.generic import  RedirectView
+from django.views.generic import RedirectView
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 

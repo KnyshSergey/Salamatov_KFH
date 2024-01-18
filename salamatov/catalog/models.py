@@ -19,7 +19,7 @@ class Good(models.Model):
     date_of_manufacture = models.DateTimeField(blank=True, null=True)
     price = models.DecimalField(decimal_places=2, blank=False, max_digits=10)
     amount = models.IntegerField(blank=True, null=True)
-    photo = models.ImageField(upload_to="good-images/")
+    photo = models.ImageField(upload_to="good-images/", blank=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True)
 
     def get_category(self):
